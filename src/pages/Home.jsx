@@ -4,7 +4,9 @@ import TrendingBar from "../components/TrendingBar";
 
 export default function Home() {
     return <section className='px-4'>
-        <SearchBar />
+        <SearchBar
+            placeholder="Search for movies or TV series" 
+        />
         <SectionTitle
             title="Trending"
         />

@@ -1,3 +1,30 @@
+import data from '../../data.json';
+import Card from '../components/Card';
+import SearchBar from '../components/SearchBar';
+import SectionTitle from '../components/SectionTitle';
+import MovieIcon from '/images/icon-category-movie.svg'
+
 export default function Movies() {
-    return <p>Movies</p>;
+    const movies = data.filter(item=>item.category==="Movie")
+    
+    return <section className='px-4'>
+        <SearchBar
+            placeholder="Search for movies"
+        />
+        <SectionTitle 
+            title="Movies"
+        />
+        <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
+           {movies.map(item=>
+            <Card 
+               img={item.thumbnail.regular.large}
+               year={item.year}
+               category={item.category}
+               icon={MovieIcon}
+               rating={item.rating}
+               title={item.title}
+            />
+            )} 
+        </div>  
+    </section>
 }
