@@ -12,7 +12,7 @@ export default function TVSeries() {
             placeholder="Search for TV series"
         />
         <SectionTitle 
-            title="Movies"
+            title="TV Series"
         />
         <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
            {movies.map(item=>
