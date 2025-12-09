@@ -7,7 +7,7 @@ import MovieIcon from '/images/icon-category-movie.svg'
 export default function Movies() {
     const movies = data.filter(item=>item.category==="Movie")
     
-    return <section className='px-4'>
+    return <section className='px-4 pb-6 lg:py-7'>
         <SearchBar
             placeholder="Search for movies"
         />
@@ -16,13 +16,14 @@ export default function Movies() {
         />
         <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
            {movies.map(item=>
-            <Card 
-               img={item.thumbnail.regular.large}
-               year={item.year}
-               category={item.category}
-               icon={MovieIcon}
-               rating={item.rating}
-               title={item.title}
+            <Card
+                key={item.title}
+                img={item.thumbnail.regular.large}
+                year={item.year}
+                category={item.category}
+                icon={MovieIcon}
+                rating={item.rating}
+                title={item.title}
             />
             )} 
         </div>  

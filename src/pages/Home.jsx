@@ -3,7 +3,7 @@ import SectionTitle from "../components/SectionTitle";
 import TrendingBar from "../components/TrendingBar";
 
 export default function Home() {
-    return <section className='px-4'>
+    return <section className='px-4 pb-6 lg:py-7'>
         <SearchBar
             placeholder="Search for movies or TV series" 
         />
