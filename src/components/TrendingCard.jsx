@@ -1,7 +1,6 @@
 import MovieIcon from '/images/icon-category-movie.svg'
 import TVIcon from '/images/icon-category-tv.svg'
 import EmptyBookmark from '/images/icon-bookmark-empty.svg';
-import React from "react";
 
 
 export default function TrendingCard({thumbnail, year, category, rating, title}){

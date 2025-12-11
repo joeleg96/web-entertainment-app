@@ -1,5 +1,5 @@
 import EmptyBookmark from '/images/icon-bookmark-empty.svg';
-import React from "react";
+
 
 export default function Card({img, year, category, icon, rating, title }) {
     return <section className='relative'>

@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
 import TrendingCard from "./TrendingCard"
 import data from '../../data.json';
-import React from "react";
 
 
 export default function TrendingBar() {

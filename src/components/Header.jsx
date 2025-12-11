@@ -5,7 +5,6 @@ import MoviesIcon from '/images/icon-nav-movies.svg'
 import TVIcon from '/images/icon-nav-tv-series.svg'
 import AvatarIcon from '/images/image-avatar.png'
 import BookmarkIcon from '/images/icon-nav-bookmark.svg'
-import React from "react";
 
 
 export default function Header() {

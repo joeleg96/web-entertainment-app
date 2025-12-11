@@ -3,7 +3,6 @@ import Card from '../components/Card';
 import SearchBar from '../components/SearchBar';
 import SectionTitle from '../components/SectionTitle';
 import TVSeriesIcon from '/images/icon-category-tv.svg'
-import React from "react";
 
 
 export default function TVSeries() {

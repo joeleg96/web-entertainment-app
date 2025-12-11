@@ -1,6 +1,5 @@
 import SearchBar from "../components/SearchBar"
 import SectionTitle from "../components/SectionTitle"
-import React from "react";
 
 
 export default function Bookmarked() {
