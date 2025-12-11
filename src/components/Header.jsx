@@ -5,6 +5,8 @@ import MoviesIcon from '/images/icon-nav-movies.svg'
 import TVIcon from '/images/icon-nav-tv-series.svg'
 import AvatarIcon from '/images/image-avatar.png'
 import BookmarkIcon from '/images/icon-nav-bookmark.svg'
+import React from "react";
+
 
 export default function Header() {
     return <header className='flex items-center justify-between sticky top-0 z-2 bg-[#161D2F] p-4 lg:flex-col lg:justify-between lg:h-[850px] lg:top-10 lg:min-w-20 lg:rounded-xl lg:left-2 lg:mr-2'>

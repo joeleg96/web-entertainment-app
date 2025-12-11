@@ -1,5 +1,7 @@
 import SearchBar from "../components/SearchBar"
 import SectionTitle from "../components/SectionTitle"
+import React from "react";
+
 
 export default function Bookmarked() {
     return <section className='px-4 pb-6 lg:py-7'>

@@ -4,6 +4,8 @@ import Movies from './pages/Movies';
 import TVSeries from "./pages/TVServies";
 import Bookmarked from "./pages/Bookmarked";
 import Header from "./components/Header";
+import React from "react";
+
 
 function App() {
   return (

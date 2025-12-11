@@ -1,4 +1,6 @@
 import SearchIcon from '/images/icon-search.svg'
+import React from "react";
+
 
 export default function SearchBar({placeholder}) {
     return <section className='flex gap-4 pt-6'>

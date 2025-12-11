@@ -3,6 +3,8 @@ import Card from '../components/Card';
 import SearchBar from '../components/SearchBar';
 import SectionTitle from '../components/SectionTitle';
 import MovieIcon from '/images/icon-category-movie.svg'
+import React from "react";
+
 
 export default function Movies() {
     const movies = data.filter(item=>item.category==="Movie")
@@ -18,7 +20,7 @@ export default function Movies() {
            {movies.map(item=>
             <Card
                 key={item.title}
-                img={item.thumbnail.regular.large}
+                img={import.meta.env.BASE_URL + item.thumbnail.regular.large}
                 year={item.year}
                 category={item.category}
                 icon={MovieIcon}

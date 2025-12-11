@@ -1,6 +1,8 @@
 import { useRef, useEffect } from "react";
 import TrendingCard from "./TrendingCard"
 import data from '../../data.json';
+import React from "react";
+
 
 export default function TrendingBar() {
   const containerRef = useRef(null);
@@ -34,7 +36,7 @@ export default function TrendingBar() {
        {trending.map(item => (
           <TrendingCard
             key={item.title}
-            thumbnail={item.thumbnail.trending.small} 
+            thumbnail={import.meta.env.BASE_URL + item.thumbnail.trending.small} 
             year={item.year}
             category={item.category}
             title={item.title}
