@@ -11,10 +11,10 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/movies' element={<Movies />} />
-          <Route path='/tv-series' element={<TVSeries />} />
-          <Route path ='/bookmarked' element={<Bookmarked />} />
+          <Route path='' element={<Home />} />
+          <Route path='movies' element={<Movies />} />
+          <Route path='tv-series' element={<TVSeries />} />
+          <Route path ='bookmarked' element={<Bookmarked />} />
         </Routes>
       </main>
     </div>
