@@ -29,7 +29,8 @@ export default function TrendingBar() {
   }, []);
     
     return <section 
-            className='grid grid-flow-col overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4' 
+            className='
+              grid grid-flow-col overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4' 
             ref={containerRef}
             >
        {trending.map(item => (
