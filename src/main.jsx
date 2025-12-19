@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
 import React from "react";
+import { BookmarkProvider } from "./context/BookmarkContext";
 
 
 const basename =
@@ -12,8 +13,10 @@ const basename =
 
 createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <BrowserRouter basename={basename}>
-        <App />
-      </BrowserRouter>
+      <BookmarkProvider>
+        <BrowserRouter basename={basename}>
+          <App />
+        </BrowserRouter>
+      </BookmarkProvider>
     </React.StrictMode>
 )
