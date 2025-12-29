@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='bg-[#10141E] lg:flex min-h-screen'>
       <Header />
-      <main>
+      <main className="flex-1 min-w-0">
         <Routes>
           <Route path='' element={<Home />} />
           <Route path='movies' element={<Movies />} />

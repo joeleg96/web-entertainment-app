@@ -35,7 +35,7 @@ export default function TrendingBar() {
             >
        {trending.map(item => (
           <TrendingCard
-            key={item.title}
+            key={`${item.title}::${item.year}`}
             thumbnail={import.meta.env.BASE_URL + item.thumbnail.trending.small} 
             year={item.year}
             category={item.category}

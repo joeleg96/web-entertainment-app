@@ -24,6 +24,7 @@ export default function Home() {
         <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
             {recommended.map(item => 
                 <Card
+                    key={`${item.title}::${item.year}`}
                     img={import.meta.env.BASE_URL + item.thumbnail.regular.large}
                     year={item.year}
                     icon={item.category === "Movie" ? MovieIcon : TVIcon}
