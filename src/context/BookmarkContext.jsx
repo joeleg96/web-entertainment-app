@@ -1,10 +1,4 @@
-// src/context/BookmarkContext.jsx
 import React, { createContext, useReducer, useContext, useEffect } from "react";
-
-/**
- * Make sure your media items have a stable id.
- * If they don't, you can use a composite key like `${title}::${year}`.
- */
 
 const BOOKMARKS_KEY = "entertainment_bookmarks";
 
