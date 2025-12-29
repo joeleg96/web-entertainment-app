@@ -6,6 +6,7 @@ import TVSeriesIcon from '/images/icon-category-tv.svg'
 import { useBookmarks } from "../context/BookmarkContext"
 import { useState } from 'react';
 import data from '../../data.json';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Bookmarked() {
 
@@ -44,51 +45,76 @@ export default function Bookmarked() {
             title="Bookmarked Movies"
         />
         
-            {bookmarkedMovies.length === 0 ? (
-                <p className='text-white'>You currently don't have any movies bookmarked.</p> 
-            ) : filteredBookmarkedMovies.length === 0 ? (
-                <p className='text-white'>No bookmarked movies match your search.</p>
-            ) : (
-                <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
-                    {filteredBookmarkedMovies.map(movie => 
-                        <Card 
-                            key={movie.title}
-                            img={import.meta.env.BASE_URL + movie.thumbnail.regular.large}
-                            year={movie.year}
-                            category={movie.category}
-                            icon={MovieIcon}
-                            rating={movie.rating}
-                            title={movie.title}
-                        />)}
-                </div>
-                
-            )}
+        {bookmarkedMovies.length === 0 ? (
+            <p className='text-white'>You currently don't have any movies bookmarked.</p> 
+        ) : filteredBookmarkedMovies.length === 0 ? (
+            <p className='text-white'>No bookmarked movies match your search.</p>
+        ) : (
+            <AnimatePresence mode='popLayout'>
+                <motion.div 
+                layout
+                className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
+                    {filteredBookmarkedMovies.map(movie => (
+                        <motion.div
+                        key={`${movie.title}::${movie.year}`}
+                        layout
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        >
+                            <Card 
+                                key={movie.title}
+                                img={import.meta.env.BASE_URL + movie.thumbnail.regular.large}
+                                year={movie.year}
+                                category={movie.category}
+                                icon={MovieIcon}
+                                rating={movie.rating}
+                                title={movie.title}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
+            
+        )}
 
         <SectionTitle 
             title="Bookmarked TV Series"
         />
-            {bookmarkedTV.length === 0 ? (
-                <p className='text-white'>You currently don't have any TV Series bookmarked.</p> 
-            ) : filteredBookmarkedTV.length === 0 ? (
-                <p className='text-white'>No bookmarked TV series match your search.</p>
-            ) : (
-                    <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
-                    {filteredBookmarkedTV.map(show => 
-                    <Card 
-                        key={show.title}
-                        img={import.meta.env.BASE_URL + show.thumbnail.regular.large}
-                        year={show.year}
-                        category={show.category}
-                        icon={TVSeriesIcon}
-                        rating={show.rating}
-                        title={show.title}
-                    />)}
-                   </div> 
-                )
-            }
-        
-
-        
+        {bookmarkedTV.length === 0 ? (
+            <p className='text-white'>You currently don't have any TV Series bookmarked.</p> 
+        ) : filteredBookmarkedTV.length === 0 ? (
+            <p className='text-white'>No bookmarked TV series match your search.</p>
+        ) : (
+            <AnimatePresence mode='popLayout'>
+                <motion.div 
+                layout
+                className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
+                    {filteredBookmarkedTV.map(show => (
+                    <motion.div
+                    key={`${show.title}::${show.year}`}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    >
+                        <Card 
+                            key={show.title}
+                            img={import.meta.env.BASE_URL + show.thumbnail.regular.large}
+                            year={show.year}
+                            category={show.category}
+                            icon={TVSeriesIcon}
+                            rating={show.rating}
+                            title={show.title}
+                        />
+                    </motion.div>
+                    ))}
+                </motion.div> 
+            </AnimatePresence>
+            
+        )} 
     </section> 
     
 }
