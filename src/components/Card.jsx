@@ -15,7 +15,7 @@ export default function Card({img, year, category, icon, rating, title }) {
     return <section className='relative'>
         <img className='rounded-xl' src={img} />
         <div 
-            className='absolute flex justify-center items-center top-3 right-3 w-8 h-8 rounded-full bg-[#5A698F]/50 hover:cursor-pointer'
+            className='absolute flex justify-center items-center top-3 right-3 w-8 h-8 rounded-full bg-[#5A698F]/50 hover:cursor-pointer hover:scale-110'
             onClick={toggle}
             >
             <img 

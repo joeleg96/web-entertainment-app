@@ -5,14 +5,22 @@ import Card from "../components/Card";
 import MovieIcon from '/images/icon-category-movie.svg'
 import TVIcon from '/images/icon-category-tv.svg'
 import data from "../../data.json";
+import { useState } from 'react';
 
 export default function Home() {
     const recommended = data
     .filter(item => item.isTrending === false);
 
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const filteredRecommended = recommended.filter(
+        item => item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+
     return <section className='px-4 pb-6 lg:py-7'>
         <SearchBar
             placeholder="Search for movies or TV series" 
+            onChange={ e => setSearchQuery(e.target.value)}
         />
         <SectionTitle
             title="Trending"
@@ -22,7 +30,7 @@ export default function Home() {
             title="Recommended for you"
         />
         <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4'>
-            {recommended.map(item => 
+            {filteredRecommended.map(item => 
                 <Card
                     key={`${item.title}::${item.year}`}
                     img={import.meta.env.BASE_URL + item.thumbnail.regular.large}
@@ -31,7 +39,6 @@ export default function Home() {
                     category={item.category}
                     rating={item.rating}
                     title={item.title}
-
                 />
             )}
         </div>
