@@ -6,7 +6,7 @@ import TVSeriesIcon from '/images/icon-category-tv.svg'
 import { useBookmarks } from "../context/BookmarkContext"
 import { useState } from 'react';
 import data from '../../data.json';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Bookmarked() {
 
